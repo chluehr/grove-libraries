@@ -1,0 +1,17 @@
+#######################################
+# Syntax Coloring Map For Matrix
+#######################################
+
+#######################################
+# Datatypes (KEYWORD1)
+#######################################
+
+GroveLedbar			KEYWORD1
+
+#######################################
+# Methods and Functions (KEYWORD2)
+#######################################
+
+setCmdMode			KEYWORD2
+sendLED		KEYWORD2
+latchData	KEYWORD2
