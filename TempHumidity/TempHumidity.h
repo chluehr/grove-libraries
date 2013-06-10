@@ -1,13 +1,15 @@
-#ifndef DHT_H
-#define DHT_H
+#ifndef TempHumidity_H
+#define TempHumidity_H
 #if ARDUINO >= 100
  #include "Arduino.h"
 #else
  #include "WProgram.h"
 #endif
 
-/* DHT library 
+/* 
+TempHumidity library, based on:
 
+DHT library 
 MIT license
 written by Adafruit Industries
 */
@@ -20,7 +22,7 @@ written by Adafruit Industries
 #define DHT21 21
 #define AM2301 21
 
-class DHT {
+class TempHumidity {
  private:
   uint8_t data[6];
   uint8_t _pin, _type, _count;
@@ -29,8 +31,8 @@ class DHT {
   boolean firstreading;
 
  public:
-  DHT(uint8_t pin, uint8_t type, uint8_t count=6);
-  void begin(void);
+  TempHumidity(uint8_t pin, uint8_t type, uint8_t count=6);
+  void setup(void);
   float readTemperature(bool S=false);
   float convertCtoF(float);
   float readHumidity(void);
