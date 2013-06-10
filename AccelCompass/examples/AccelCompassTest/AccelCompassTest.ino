@@ -11,7 +11,7 @@ AccelCompass accelCompass;
 void setup()
 {
   Serial.begin(9600);  // Serial is used for debugging
-  accelCompass.init();
+  accelCompass.setup();
 }
 
 void loop()

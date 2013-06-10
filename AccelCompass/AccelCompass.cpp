@@ -49,7 +49,7 @@
 AccelCompass::AccelCompass()
 {
 }
-void AccelCompass::init()
+void AccelCompass::setup()
 {
   Wire.begin();  // Start up I2C, required for LSM303 communication
   initLSM303(ACCELE_SCALE);  // Initialize the LSM303, using a SCALE full-scale range

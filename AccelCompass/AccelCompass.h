@@ -66,7 +66,7 @@ class AccelCompass
     void getLSM303_accel(int * rawValues);
     void initLSM303(int fs);
     void waitReady();
-    void init();
+    void setup();
   private:
     byte LSM303_read(byte address);
     void LSM303_write(byte data, byte address);
