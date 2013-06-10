@@ -14,9 +14,9 @@ void loop() {
   uint8_t barNo = 0;
   
   while (barNo <= 10) {
-    strip.setSingleBar(barNo); // Set LED States
+    strip.setGauge(barNo);
     barNo++;
-    delay(100); 
+    delay(200); 
   }
   
 }

@@ -12,6 +12,7 @@ class GroveLedbar {
     sendLED(uint16_t data),
     setCmdMode(void),
 	latchData(void),
+	setGauge(uint8_t gauge),
 	setSingleBar(uint8_t barnum);
  private:
   void

@@ -13,10 +13,13 @@ void setup(){
 void loop() {
   uint8_t barNo = 0;
   
-  while (barNo <= 10) {
-    strip.setSingleBar(barNo); // Set LED States
+  while(barNo <= 10) {
+    //strip.setCmdMode();
+    //strip.setSingleBar(barNo); // Set LED States
+    strip.setGauge(barNo); // Set LED States
+    //strip.latchData();
     barNo++;
-    delay(100); 
+   delay(100); 
   }
   
 }

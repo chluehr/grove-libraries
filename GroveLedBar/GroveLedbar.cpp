@@ -28,6 +28,19 @@ void GroveLedbar::setSingleBar(uint8_t barnum) {
   latchData();
 }
 
+void GroveLedbar::setGauge(uint8_t gauge) {
+
+  uint16_t val = 0;
+  for (uint16_t barnum = 0; barnum < gauge ; barnum++) {
+	
+	val = val |( 0x01<<barnum);
+  }
+  setCmdMode();
+  sendLED(val);
+  latchData();
+}
+
+
 void GroveLedbar::setCmdMode(void){
   send16bitData(0x0000);
 }
