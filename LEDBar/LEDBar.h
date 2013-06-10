@@ -5,9 +5,9 @@
  #include <pins_arduino.h>
 #endif
 
-class GroveLedbar {
+class LEDBar {
  public:
-  GroveLedbar(uint8_t dpin, uint8_t cpin); // Configurable pins
+  LEDBar(uint8_t dpin, uint8_t cpin); // Configurable pins
   void
     sendLED(uint16_t data),
     setCmdMode(void),

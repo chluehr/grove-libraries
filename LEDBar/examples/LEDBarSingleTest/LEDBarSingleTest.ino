@@ -1,10 +1,10 @@
-#include "GroveLedbar.h"
+#include "LEDBar.h"
 
 // Pin definition
 int dataPin = 8;
 int clockPin = 9;
 
-GroveLedbar strip = GroveLedbar(dataPin, clockPin);
+LEDBar strip = LEDBar(dataPin, clockPin);
 
 void setup(){
   Serial.begin(57600);
@@ -18,5 +18,4 @@ void loop() {
     barNo++;
     delay(100); 
   }
-  
 }

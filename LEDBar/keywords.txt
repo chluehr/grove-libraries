@@ -6,7 +6,7 @@
 # Datatypes (KEYWORD1)
 #######################################
 
-GroveLedbar			KEYWORD1
+LEDBar			KEYWORD1
 
 #######################################
 # Methods and Functions (KEYWORD2)
@@ -15,3 +15,4 @@ GroveLedbar			KEYWORD1
 setCmdMode			KEYWORD2
 sendLED		KEYWORD2
 latchData	KEYWORD2
+setGauge	KEYWORD2

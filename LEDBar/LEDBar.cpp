@@ -1,6 +1,6 @@
-#include "GroveLedbar.h"
+#include "LEDBar.h"
 // Constructor for use with arbitrary clock/data pins:
-GroveLedbar::GroveLedbar(uint8_t dpin, uint8_t cpin) {
+LEDBar::LEDBar(uint8_t dpin, uint8_t cpin) {
   pinMode(dpin, OUTPUT);
   pinMode(cpin, OUTPUT);
   datapin     = dpin;
@@ -11,7 +11,7 @@ GroveLedbar::GroveLedbar(uint8_t dpin, uint8_t cpin) {
   datapinmask = digitalPinToBitMask(dpin);
 }
 
-void GroveLedbar::sendLED(uint16_t data) {
+void LEDBar::sendLED(uint16_t data) {
   unsigned char i;
   for(i=0;i<12;i++) {
     if(data & 0x0001)
@@ -22,13 +22,13 @@ void GroveLedbar::sendLED(uint16_t data) {
   }
 }
 
-void GroveLedbar::setSingleBar(uint8_t barnum) {
+void LEDBar::setSingleBar(uint8_t barnum) {
   setCmdMode();
   sendLED(0x01<<barnum);
   latchData();
 }
 
-void GroveLedbar::setGauge(uint8_t gauge) {
+void LEDBar::setGauge(uint8_t gauge) {
 
   uint16_t val = 0;
   for (uint16_t barnum = 0; barnum < gauge ; barnum++) {
@@ -41,10 +41,10 @@ void GroveLedbar::setGauge(uint8_t gauge) {
 }
 
 
-void GroveLedbar::setCmdMode(void){
+void LEDBar::setCmdMode(void){
   send16bitData(0x0000);
 }
-void GroveLedbar::send16bitData(uint16_t data) {
+void LEDBar::send16bitData(uint16_t data) {
   for(unsigned char i=0;i<16;i++) {
     if(data&0x8000) {
       *dataport |= datapinmask;
@@ -57,7 +57,7 @@ void GroveLedbar::send16bitData(uint16_t data) {
 }
 
 //latch routine for MY9221 data exchange
-void GroveLedbar::latchData(void) {
+void LEDBar::latchData(void) {
   *clkport &=~ datapinmask;
   delayMicroseconds(10);
   for(unsigned char i=0;i<8;i++) {
