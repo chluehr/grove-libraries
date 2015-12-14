@@ -8,14 +8,17 @@ written by Adafruit Industries
 
 #include "TempHumidity.h"
 
-TempHumidity::TempHumidity(uint8_t pin, uint8_t type, uint8_t count) {
+TempHumidity::TempHumidity() {
+
+}
+
+void TempHumidity::setup(uint8_t pin, uint8_t type, uint8_t count) {
+
   _pin = pin;
   _type = type;
   _count = count;
   firstreading = true;
-}
 
-void TempHumidity::setup(void) {
   // set up the pins!
   pinMode(_pin, INPUT);
   digitalWrite(_pin, HIGH);

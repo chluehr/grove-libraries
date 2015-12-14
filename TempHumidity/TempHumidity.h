@@ -31,8 +31,8 @@ class TempHumidity {
   boolean firstreading;
 
  public:
-  TempHumidity(uint8_t pin, uint8_t type, uint8_t count=6);
-  void setup(void);
+  TempHumidity(void);
+  void setup(uint8_t pin, uint8_t type, uint8_t count=6);
   float readTemperature(bool S=false);
   float convertCtoF(float);
   float readHumidity(void);

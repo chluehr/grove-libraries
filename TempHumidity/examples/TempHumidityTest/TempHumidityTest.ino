@@ -3,12 +3,12 @@
 #include "TempHumidity.h"
 
 // Sensor on Digital Pin 8, DHT11 type (Grove v1.0)
-TempHumidity tempHumidity(8, DHT11);
+TempHumidity tempHumidity;
 
 void setup() {
   Serial.begin(9600); 
   Serial.println("Temperature&Humidity test!");
-   tempHumidity.setup();
+   tempHumidity.setup(8, DHT11);
 }
 
 void loop() {
